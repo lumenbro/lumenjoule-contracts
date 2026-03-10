@@ -1,6 +1,8 @@
-name: StellarExpert Verify
+name: Release & Verify
 
 on:
+  push:
+    tags: ['v*']
   workflow_dispatch:
 
 permissions:
@@ -12,7 +14,7 @@ jobs:
   release-rebalancer-admin:
     uses: stellar-expert/soroban-build-workflow/.github/workflows/release.yml@main
     with:
-      release_name: v0.1.0-se
+      release_name: v0.1.0
       package: 'rebalancer-admin'
       home_domain: 'lumenbro.com'
     secrets:
